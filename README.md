@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Turkish Law Firm Website Template
+
+A professional website template designed specifically for Turkish law firms. Built with modern web standards using Next.js and TypeScript.
+
+## Features
+
+- Professional law firm design
+- Mobile responsive layout
+- Next.js 14 App Router architecture
+- TypeScript support
+- Modern styling with Tailwind CSS
+- SEO optimization for search engines
+- Turkish language support
+- Social media sharing optimization
+- Single-file content management system
+
+## Project Structure
+
+```
+law/
+├── app/                    # Next.js application directory
+│   ├── about/             # About page (Hakkımızda)
+│   ├── contact/           # Contact page (İletişim)
+│   ├── services/          # Services page (Çalışma alanları)
+│   ├── layout.tsx         # Root layout with SEO settings
+│   └── page.tsx           # Home page
+├── components/
+│   ├── layout/           # Header, footer, navigation components
+│   ├── sections/         # Page sections (hero, services, etc.)
+│   └── ui/              # Reusable UI components
+├── config/
+│   └── site.ts          # Main configuration file
+└── lib/
+    └── seo.ts           # SEO utility functions
+```
+
+## Setup and Configuration
+
+All website content is managed from a single file: `config/site.ts`
+
+You need to update these sections:
+
+- Law firm information (name, contact, address)
+- Lawyer details (name, experience, education)
+- Practice areas list
+- SEO settings (title, description, keywords)
+- Theme colors
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Update site configuration:
+
+```bash
+# Edit config/site.ts with your law firm's information
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project is ready for production deployment:
 
-## Learn More
+```bash
+npm run build
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## SEO and Search Engine Optimization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- JSON-LD structured data for legal services
+- OpenGraph and Twitter Card support
+- Turkish language META tags
+- Automatic sitemap generation
+- robots.txt optimization
+- Canonical URLs for all pages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Technology Stack
 
-## Deploy on Vercel
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Font:** Inter (with Turkish character support)
+- **SEO:** Next.js metadata API
+- **Deploy:** Vercel, Netlify or any Node.js hosting
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Customization
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+You can change colors and styling by editing the theme section in `config/site.ts`. For more extensive changes, update Tailwind CSS classes in the component files.
+
+## License
+
+This template is open source and available under the MIT License. You can freely use it in your projects and customize it according to your needs.

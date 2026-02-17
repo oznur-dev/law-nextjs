@@ -18,13 +18,13 @@ export default function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/iletisim"
+              href="/contact"
               className="bg-blue-800 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-900 transition-colors"
             >
               İletişime Geçin
             </Link>
             <Link
-              href="/calisma-alanlarimiz"
+              href="/services"
               className="border border-gray-300 text-gray-700 px-8 py-3 rounded-md font-medium hover:bg-gray-50 transition-colors"
             >
               Çalışma Alanları

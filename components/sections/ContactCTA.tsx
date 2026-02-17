@@ -16,7 +16,7 @@ export default function ContactCTA() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Link
-              href="/iletisim"
+              href="/contact"
               className="bg-white text-blue-800 px-8 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors"
             >
               Randevu Alın

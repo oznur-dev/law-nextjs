@@ -1,15 +1,41 @@
 import { siteConfig } from "@/config/site";
+import {
+  generateOpenGraph,
+  generateTwitterCard,
+  generateBreadcrumbSchema,
+} from "@/lib/seo";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Çalışma Alanlarımız - ${siteConfig.firm.name}`,
+  title: "Çalışma Alanlarımız",
   description:
     "Ceza, aile, iş, ticaret, gayrimenkul ve miras hukuku alanlarında profesyonel hukuki danışmanlık hizmetleri.",
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: generateOpenGraph({
+    title: `Çalışma Alanlarımız - ${siteConfig.firm.name}`,
+    description:
+      "Ceza, aile, iş, ticaret, gayrimenkul ve miras hukuku alanlarında profesyonel hukuki danışmanlık hizmetleri.",
+    path: "/services",
+  }),
+  twitter: generateTwitterCard({
+    title: `Çalışma Alanlarımız - ${siteConfig.firm.name}`,
+    description:
+      "Ceza, aile, iş, ticaret, gayrimenkul ve miras hukuku alanlarında profesyonel hukuki danışmanlık hizmetleri.",
+  }),
 };
 
 export default function CalismaAlanlarimizPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema("/services")),
+        }}
+      />
+
       {/* Header Section */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,7 +92,7 @@ export default function CalismaAlanlarimizPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/iletisim"
+              href="/contact"
               className="bg-blue-800 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-900 transition-colors"
             >
               İletişim Formu

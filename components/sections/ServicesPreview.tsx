@@ -31,7 +31,7 @@ export default function ServicesPreview() {
 
         <div className="text-center mt-12">
           <Link
-            href="/calisma-alanlarimiz"
+            href="/services"
             className="bg-blue-800 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-900 transition-colors"
           >
             Tüm Çalışma Alanları

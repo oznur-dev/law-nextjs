@@ -3,9 +3,9 @@ import { siteConfig } from "@/config/site";
 
 const navigation = [
   { name: "Ana Sayfa", href: "/" },
-  { name: "Hakkımızda", href: "/hakkimizda" },
-  { name: "Çalışma Alanlarımız", href: "/calisma-alanlarimiz" },
-  { name: "İletişim", href: "/iletisim" },
+  { name: "Hakkımızda", href: "/about" },
+  { name: "Çalışma Alanlarımız", href: "/services" },
+  { name: "İletişim", href: "/contact" },
 ];
 
 export default function Navbar() {
