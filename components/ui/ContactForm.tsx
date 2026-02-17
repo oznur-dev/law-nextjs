@@ -2,6 +2,9 @@
 
 import { siteConfig } from "@/config/site";
 import { useState } from "react";
+import AnimatedSection from "@/components/ui/AnimatedSection";
+import Button from "@/components/ui/Button";
+import Icon from "@/components/ui/Icon";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -12,10 +15,18 @@ export default function ContactForm() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Frontend only - show confirmation message
-    alert("Mesajınız alınmıştır. En kısa sürede size dönüş yapılacaktır.");
+    setIsSubmitting(true);
+
+    // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    setIsSubmitted(true);
+    setIsSubmitting(false);
     setFormData({
       name: "",
       email: "",
@@ -23,6 +34,9 @@ export default function ContactForm() {
       subject: "",
       message: "",
     });
+
+    // Reset success message after 3 seconds
+    setTimeout(() => setIsSubmitted(false), 3000);
   };
 
   const handleChange = (
@@ -36,8 +50,32 @@ export default function ContactForm() {
     });
   };
 
+  if (isSubmitted) {
+    return (
+      <AnimatedSection
+        animation="scaleIn"
+        className="bg-white rounded-lg border border-gray-200 p-8"
+      >
+        <div className="text-center">
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Icon name="check" size="lg" className="text-green-600" />
+          </div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">
+            Mesajınız Alındı!
+          </h3>
+          <p className="text-gray-600">
+            En kısa sürede size dönüş yapılacaktır.
+          </p>
+        </div>
+      </AnimatedSection>
+    );
+  }
+
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-8">
+    <AnimatedSection
+      animation="fadeInLeft"
+      className="bg-white rounded-lg border border-gray-200 p-8"
+    >
       <h3 className="text-2xl font-bold text-gray-900 mb-6">İletişim Formu</h3>
 
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -56,7 +94,7 @@ export default function ContactForm() {
               required
               value={formData.name}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="form-input w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
 
@@ -74,7 +112,7 @@ export default function ContactForm() {
               value={formData.phone}
               onChange={handleChange}
               placeholder="+90 5xx xxx xx xx"
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="form-input w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
         </div>
@@ -93,7 +131,7 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="form-input w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
         </div>
 
@@ -110,7 +148,7 @@ export default function ContactForm() {
             required
             value={formData.subject}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="form-input w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           >
             <option value="">Konu seçiniz</option>
             {siteConfig.services.map((service) => (
@@ -138,17 +176,21 @@ export default function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             placeholder="Hukuki konunuzu kısaca açıklayınız..."
-            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="form-input w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
           />
         </div>
 
         <div>
-          <button
+          <Button
             type="submit"
-            className="w-full bg-blue-800 text-white py-3 rounded-md font-medium hover:bg-blue-900 transition-colors"
+            disabled={isSubmitting}
+            loading={isSubmitting}
+            variant="primary"
+            size="lg"
+            className="w-full"
           >
-            Mesaj Gönder
-          </button>
+            {isSubmitting ? "Gönderiliyor" : "Mesaj Gönder"}
+          </Button>
         </div>
 
         <p className="text-sm text-gray-600 text-center">
@@ -156,6 +198,6 @@ export default function ContactForm() {
           yapılacaktır.
         </p>
       </form>
-    </div>
+    </AnimatedSection>
   );
 }

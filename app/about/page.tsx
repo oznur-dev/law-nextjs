@@ -1,5 +1,9 @@
 import { siteConfig } from "@/config/site";
 import Image from "next/image";
+import AnimatedSection from "@/components/ui/AnimatedSection";
+import Section from "@/components/ui/Section";
+import Button from "@/components/ui/Button";
+import Icon from "@/components/ui/Icon";
 import {
   generateOpenGraph,
   generateTwitterCard,
@@ -63,65 +67,118 @@ export default function HakkimizdaPage() {
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                {siteConfig.lawyer.name}
-              </h2>
-              <p className="text-xl text-blue-800 font-medium mb-6">
-                {siteConfig.lawyer.title}
-              </p>
-            </div>
+            <AnimatedSection animation="fadeInUp">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  {siteConfig.lawyer.name}
+                </h2>
+                <p className="text-xl text-blue-800 font-medium mb-6">
+                  {siteConfig.lawyer.title}
+                </p>
+              </div>
+            </AnimatedSection>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Biography */}
-              <div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-                  Profesyonel Geçmiş
-                </h3>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  {siteConfig.lawyer.bio}
-                </p>
-                <p className="text-gray-700 leading-relaxed">
-                  Hukuk büromuz, müvekkillerimizin haklarını korumak ve en iyi
-                  hukuki sonuçları elde etmek amacıyla titizlikle çalışmaktadır.
-                  Her davaya özel yaklaşım sergileyerek, müvekkillerimizin
-                  güvenini kazanmaya odaklanıyoruz.
-                </p>
-              </div>
+              <AnimatedSection animation="fadeInLeft" delay={200}>
+                <div>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+                    Profesyonel Geçmiş
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed mb-6">
+                    {siteConfig.lawyer.bio}
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    Hukuk büromuz, müvekkillerimizin haklarını korumak ve en iyi
+                    hukuki sonuçları elde etmek amacıyla titizlikle
+                    çalışmaktadır. Her davaya özel yaklaşım sergileyerek,
+                    müvekkillerimizin güvenini kazanmaya odaklanıyoruz.
+                  </p>
+                </div>
+              </AnimatedSection>
 
               {/* Credentials */}
-              <div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-                  Eğitim ve Yetkinlikler
-                </h3>
+              <AnimatedSection animation="fadeInRight" delay={400}>
+                <div>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+                    Eğitim ve Yetkinlikler
+                  </h3>
 
-                <div className="space-y-6">
-                  <div className="border border-gray-200 rounded-lg p-6">
-                    <h4 className="font-semibold text-gray-900 mb-2">Eğitim</h4>
-                    <p className="text-gray-700">
-                      {siteConfig.lawyer.education}
-                    </p>
-                  </div>
+                  <div className="space-y-6">
+                    <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-300">
+                      <h4 className="font-semibold text-gray-900 mb-2 flex items-center space-x-2">
+                        <svg
+                          className="w-5 h-5 text-blue-600"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 14l9-5-9-5-9 5 9 5z"
+                          />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                          />
+                        </svg>
+                        <span>Eğitim</span>
+                      </h4>
+                      <p className="text-gray-700">
+                        {siteConfig.lawyer.education}
+                      </p>
+                    </div>
 
-                  <div className="border border-gray-200 rounded-lg p-6">
-                    <h4 className="font-semibold text-gray-900 mb-2">
-                      Deneyim
-                    </h4>
-                    <p className="text-gray-700">
-                      {siteConfig.lawyer.experience} Yıl
-                    </p>
-                  </div>
+                    <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-300">
+                      <h4 className="font-semibold text-gray-900 mb-2 flex items-center space-x-2">
+                        <svg
+                          className="w-5 h-5 text-green-600"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
+                        </svg>
+                        <span>Deneyim</span>
+                      </h4>
+                      <p className="text-gray-700">
+                        {siteConfig.lawyer.experience} Yıl
+                      </p>
+                    </div>
 
-                  <div className="border border-gray-200 rounded-lg p-6">
-                    <h4 className="font-semibold text-gray-900 mb-2">
-                      Baro Sicil No
-                    </h4>
-                    <p className="text-gray-700">
-                      {siteConfig.lawyer.barNumber}
-                    </p>
+                    <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-300">
+                      <h4 className="font-semibold text-gray-900 mb-2 flex items-center space-x-2">
+                        <svg
+                          className="w-5 h-5 text-purple-600"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                          />
+                        </svg>
+                        <span>Baro Sicil No</span>
+                      </h4>
+                      <p className="text-gray-700">
+                        {siteConfig.lawyer.barNumber}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </AnimatedSection>
             </div>
           </div>
         </div>
@@ -180,8 +237,8 @@ export default function HakkimizdaPage() {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <Section background="white" padding="lg">
+        <div className="text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
             Hukuki Desteğe İhtiyacınız mı Var?
           </h2>
@@ -191,21 +248,19 @@ export default function HakkimizdaPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact"
-              className="bg-blue-800 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-900 transition-colors"
-            >
+            <Button href="/contact" variant="primary" size="lg">
               İletişime Geçin
-            </a>
-            <a
+            </Button>
+            <Button
               href={`tel:${siteConfig.firm.phone}`}
-              className="border border-gray-300 text-gray-700 px-8 py-3 rounded-md font-medium hover:bg-gray-50 transition-colors"
+              variant="secondary"
+              size="lg"
             >
               {siteConfig.firm.phone}
-            </a>
+            </Button>
           </div>
         </div>
-      </section>
+      </Section>
     </div>
   );
 }

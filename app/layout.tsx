@@ -56,7 +56,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr">
+    <html lang="tr" className="scroll-smooth">
       <head>
         <script
           type="application/ld+json"
@@ -67,7 +67,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <Navbar />
-        <main>{children}</main>
+        <main className="page-transition">{children}</main>
         <Footer />
       </body>
     </html>

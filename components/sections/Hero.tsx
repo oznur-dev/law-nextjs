@@ -1,10 +1,17 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import Image from "next/image";
+import AnimatedSection from "@/components/ui/AnimatedSection";
+import Button from "@/components/ui/Button";
+import Section from "@/components/ui/Section";
 
 export default function Hero() {
   return (
-    <section className="relative bg-white py-20 overflow-hidden">
+    <Section
+      background="white"
+      padding="lg"
+      className="relative overflow-hidden page-transition"
+    >
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-slate-50">
         <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-blue-100/50 to-transparent"></div>
@@ -21,33 +28,44 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-4xl mx-auto">
+      <div className="relative text-center max-w-4xl mx-auto">
+        <AnimatedSection animation="fadeInUp">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             {siteConfig.hero.title}
           </h1>
+        </AnimatedSection>
+
+        <AnimatedSection animation="fadeInUp" delay={150}>
           <p className="text-xl text-gray-600 mb-4">
             {siteConfig.hero.subtitle}
           </p>
+        </AnimatedSection>
+
+        <AnimatedSection animation="fadeInUp" delay={300}>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
             {siteConfig.hero.description}
           </p>
+        </AnimatedSection>
+
+        <AnimatedSection animation="scaleIn" delay={450}>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
+            <Button
               href={siteConfig.hero.primaryButton.href}
-              className="bg-blue-800 text-white px-8 py-3 rounded-md font-medium hover:bg-blue-900 transition-colors shadow-lg"
+              variant="primary"
+              size="lg"
             >
               {siteConfig.hero.primaryButton.text}
-            </Link>
-            <Link
+            </Button>
+            <Button
               href={siteConfig.hero.secondaryButton.href}
-              className="border border-gray-300 text-gray-700 px-8 py-3 rounded-md font-medium hover:bg-gray-50 transition-colors"
+              variant="secondary"
+              size="lg"
             >
               {siteConfig.hero.secondaryButton.text}
-            </Link>
+            </Button>
           </div>
-        </div>
+        </AnimatedSection>
       </div>
-    </section>
+    </Section>
   );
 }
