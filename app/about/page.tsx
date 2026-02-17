@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import Image from "next/image";
 import {
   generateOpenGraph,
   generateTwitterCard,
@@ -34,15 +35,25 @@ export default function HakkimizdaPage() {
       />
 
       {/* Header Section */}
-      <section className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=1200&h=600&fit=crop&crop=center"
+            alt="Hukuk bürosu"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-purple-900/50"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">
-              Hakkımızda
+            <h1 className="text-5xl font-bold text-white mb-6">
+              {siteConfig.pages.about.title}
             </h1>
-            <p className="text-xl text-gray-600">
-              {siteConfig.firm.name} olarak müvekkillerimize güvenilir ve
-              profesyonel hukuki hizmetler sunuyoruz.
+            <p className="text-xl text-gray-200">
+              {siteConfig.pages.about.description}
             </p>
           </div>
         </div>

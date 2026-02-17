@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import Image from "next/image";
 import {
   generateOpenGraph,
   generateTwitterCard,
@@ -35,13 +36,25 @@ export default function IletisimPage() {
       />
 
       {/* Header Section */}
-      <section className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=600&fit=crop&crop=center"
+            alt="İletişim"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/50 to-blue-900/50"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">İletişim</h1>
-            <p className="text-xl text-gray-600">
-              Hukuki konularınızda size yardımcı olmaya hazırız. İletişim
-              bilgilerimizi kullanarak bize ulaşabilirsiniz.
+            <h1 className="text-5xl font-bold text-white mb-6">
+              {siteConfig.pages.contact.title}
+            </h1>
+            <p className="text-xl text-gray-200">
+              {siteConfig.pages.contact.description}
             </p>
           </div>
         </div>
