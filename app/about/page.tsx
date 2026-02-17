@@ -97,84 +97,64 @@ export default function HakkimizdaPage() {
                 </div>
               </AnimatedSection>
 
-              {/* Credentials */}
+              {/* Key Highlights */}
               <AnimatedSection animation="fadeInRight" delay={400}>
                 <div>
                   <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-                    Eğitim ve Yetkinlikler
+                    Temel Bilgiler
                   </h3>
 
-                  <div className="space-y-6">
-                    <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-300">
-                      <h4 className="font-semibold text-gray-900 mb-2 flex items-center space-x-2">
-                        <svg
-                          className="w-5 h-5 text-blue-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 14l9-5-9-5-9 5 9 5z"
-                          />
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                          />
-                        </svg>
-                        <span>Eğitim</span>
-                      </h4>
-                      <p className="text-gray-700">
-                        {siteConfig.lawyer.education}
-                      </p>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+                      <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                        <Icon
+                          name="check"
+                          size="md"
+                          className="text-blue-600"
+                        />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-gray-900">Deneyim</h4>
+                        <p className="text-gray-600">
+                          {siteConfig.lawyer.experience} yıllık profesyonel
+                          tecrübe
+                        </p>
+                      </div>
                     </div>
 
-                    <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-300">
-                      <h4 className="font-semibold text-gray-900 mb-2 flex items-center space-x-2">
-                        <svg
-                          className="w-5 h-5 text-green-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
-                        <span>Deneyim</span>
-                      </h4>
-                      <p className="text-gray-700">
-                        {siteConfig.lawyer.experience} Yıl
-                      </p>
+                    <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+                      <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                        <Icon
+                          name="check"
+                          size="md"
+                          className="text-green-600"
+                        />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-gray-900">
+                          Çalışma Alanları
+                        </h4>
+                        <p className="text-gray-600">
+                          {siteConfig.services.length} farklı hukuk dalında
+                          uzmanlaşma
+                        </p>
+                      </div>
                     </div>
 
-                    <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-300">
-                      <h4 className="font-semibold text-gray-900 mb-2 flex items-center space-x-2">
-                        <svg
-                          className="w-5 h-5 text-purple-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                          />
-                        </svg>
-                        <span>Baro Sicil No</span>
-                      </h4>
-                      <p className="text-gray-700">
-                        {siteConfig.lawyer.barNumber}
-                      </p>
+                    <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+                      <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                        <Icon
+                          name="check"
+                          size="md"
+                          className="text-purple-600"
+                        />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-gray-900">Konum</h4>
+                        <p className="text-gray-600">
+                          İstanbul merkezli hizmet
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>

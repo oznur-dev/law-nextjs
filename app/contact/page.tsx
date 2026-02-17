@@ -198,14 +198,16 @@ export default function IletisimPage() {
           </AnimatedSection>
 
           <AnimatedSection animation="scaleIn" delay={300}>
-            <Button
-              href={`tel:${siteConfig.firm.phone}`}
-              variant="phone"
-              size="lg"
-              icon={<Icon name="phone" size="sm" />}
-            >
-              Hemen Arayın: {siteConfig.firm.phone}
-            </Button>
+            <div className="pt-6">
+              <Button
+                href={`tel:${siteConfig.firm.phone}`}
+                variant="phone"
+                size="lg"
+                icon={<Icon name="phone" size="sm" />}
+              >
+                Hemen Arayın: {siteConfig.firm.phone}
+              </Button>
+            </div>
           </AnimatedSection>
         </div>
       </Section>

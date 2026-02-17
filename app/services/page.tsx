@@ -85,16 +85,8 @@ export default function CalismaAlanlarimizPage() {
                   }}
                   title={service.title}
                   description={service.description}
-                  footer={
-                    <div className="border-t border-gray-100 pt-4">
-                      <p className="text-sm text-gray-600">
-                        Bu konuda hukuki desteğe ihtiyacınız varsa, deneyimli
-                        ekibimizle iletişime geçebilirsiniz.
-                      </p>
-                    </div>
-                  }
                   hover
-                />
+                ></Card>
               </AnimatedSection>
             );
           })}
@@ -114,7 +106,7 @@ export default function CalismaAlanlarimizPage() {
           </AnimatedSection>
 
           <AnimatedSection animation="scaleIn" delay={300}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
               <Button href="/contact" variant="primary" size="lg">
                 İletişim Formu
               </Button>

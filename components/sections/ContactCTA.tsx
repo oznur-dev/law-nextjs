@@ -28,7 +28,7 @@ export default function ContactCTA() {
         </AnimatedSection>
 
         <AnimatedSection animation="scaleIn" delay={400}>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 pt-6">
             <Button href="/contact" variant="secondary" size="lg">
               Randevu Alın
             </Button>

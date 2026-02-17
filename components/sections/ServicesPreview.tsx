@@ -56,7 +56,7 @@ export default function ServicesPreview() {
       </div>
 
       <AnimatedSection animation="fadeInUp" delay={800}>
-        <div className="text-center mt-12">
+        <div className="text-center mt-16">
           <Button href="/services" variant="primary" size="lg">
             Tüm Çalışma Alanları
           </Button>
